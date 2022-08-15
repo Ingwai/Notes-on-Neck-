@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pl">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Wallpoet&display=swap" rel="stylesheet">
+<script defer src="./source/chosen_arp_chord.js"></script>
+<script defer src="./source/chosen_intervals.js"></script>
+<script defer src="./source/gryf.js"></script>
+<link rel="stylesheet" href="./source/style.css">
+<title>Guitar Neck</title>
+</head>
+
+<body>
+    <h1>Learning the Notes on the Neck of the Guitar</h1>
+    <div class="neck_main">
+        <div class="neck">
+            <img src="./source/guitarNeck.png">
+        </div>
+        <div id="guitarStrings"></div>
+    </div>
+    <h3>Select note first, after arpeggio or interval</h3>
+    <div class="changeNotes">
+        <!-- Tekst wyświelający się pod gryfem przyt wyborze dźwięku -->
+        <span data-Note-id="sound_1">&nbsp&nbspC&nbsp&nbsp</span>
+        <span data-Note-id="sound_2">&nbsp&nbspC#&nbsp&nbsp</span>
+        <span data-Note-id="sound_3">&nbsp&nbspD&nbsp&nbsp</span>
+        <span data-Note-id="sound_4">&nbsp&nbspD#&nbsp&nbsp</span>
+        <span data-Note-id="sound_5">&nbsp&nbspE&nbsp&nbsp</span>
+        <span data-Note-id="sound_6">&nbsp&nbspF&nbsp&nbsp</span>
+        <span data-Note-id="sound_7">&nbsp&nbspF#&nbsp&nbsp</span>
+        <span data-Note-id="sound_8">&nbsp&nbspG&nbsp&nbsp</span>
+        <span data-Note-id="sound_9">&nbsp&nbspG#&nbsp&nbsp</span>
+        <span data-Note-id="sound_10">&nbsp&nbspA&nbsp&nbsp</span>
+        <span data-Note-id="sound_11">&nbsp&nbspA#&nbsp&nbsp</span>
+        <span data-Note-id="sound_12">&nbsp&nbspB&nbsp&nbsp</span>
+    </div>
+
+    <div class="main">
+        <h4>Notes</h4>
+        <!-- przyciski do wyboru dźwięku na gryfie -->
+        <button class="sounds" value='C' data-id="sound_1">C</button>
+        <button class="sounds" value='C#' data-id="sound_2">C#</button>
+        <button class="sounds" value='D' data-id="sound_3">D</button>
+        <button class="sounds" value='D#' data-id="sound_4">D#</button>
+        <button class="sounds" value='E' data-id="sound_5">E</button>
+        <button class="sounds" value='F' data-id="sound_6">F</button>
+        <button class="sounds" value='F#' data-id="sound_7">F#</button>
+        <button class="sounds" value='G' data-id="sound_8">G</button>
+        <button class="sounds" value='G#' data-id="sound_9">G#</button>
+        <button class="sounds" value='A' data-id="sound_10">A</button>
+        <button class="sounds" value='A#' data-id="sound_11">A#</button>
+        <button class="sounds" value='B' data-id="sound_12">B</button>
+
+        <h4>Arpeggios</h4>
+        <button class="soundA" data-Chord-id="Chord_1">Xm</button>
+        <button class="soundA" data-Chord-id="Chord_2">X</button>
+        <button class="soundA" data-Chord-id="Chord_3">Xm<sup>7</sup></button>
+        <button class="soundA" data-Chord-id="Chord_4">X<sup>7</sup></button>
+        <button class="soundA" data-Chord-id="Chord_5">XMAJ<sup>7</sup></button>
+        <button class="soundA" data-Chord-id="Chord_6">X<sup>7b9</sup></button>
+        <button class="soundA" data-Chord-id="Chord_7">X<sup>sus4</sup></button>
+        <button class="soundA" data-Chord-id="Chord_8">Xm<sup>7b5</sup></button>
+        <button class="soundA" data-Chord-id="Chord_9">X<sup>7b5</sup></button>
+        <button class="soundA" data-Chord-id="Chord_10">X<sup>7#5</sup></button>
+        <button class="soundA" data-Chord-id="Chord_11">XMAJ<sup>7#11</sup></button>
+        <!-- <button class="reset" onclick="resetAll()">RESET</button> -->
+
+        <h4>Intervals</h4>
+        <button class="soundB" value='m2' data-Int-id="interval-1">Minor second m2</button>
+        <button class="soundB" value='M2' data-Int-id="interval-2">Major second M2</button>
+        <button class="soundB" value='m3' data-Int-id="interval-3">Minor third m3</button>
+        <button class="soundB" value='M3' data-Int-id="interval-4">Major third M3</button>
+        <button class="soundB" value='p4' data-Int-id="interval-5">Perfect fourth p4</button>
+        <button class="soundB" value='TT' data-Int-id="interval-6">Tritone TT</button>
+        <button class="soundB" value='p5' data-Int-id="interval-7">Perfect fifth p5</button>
+        <button class="soundB" value='m6' data-Int-id="interval-8">Minor sixth m6</button>
+        <button class="soundB" value='M6' data-Int-id="interval-9">Major sixth M6</button>
+        <button class="soundB" value='m7' data-Int-id="interval-10">Minor seventh m7</button>
+        <button class="soundB" value='M7' data-Int-id="interval-11">Major seventh M7</button>
+
+        <h4>Chords</h4>
+        <button class="soundA chord_m">minor</button>
+        <button class="soundA chord_M">Major</button>
+        <button class="soundA chord_m7">m7</button>
+        <button class="soundA chord_7">7</button>
+        <button class="soundA chord_MAJ7">MAj7</button>
+        <button class="soundA chord_7b9">7b9</button>
+        <button class="soundA chord_sus2">sus2</button>
+        <button class="soundA chord_sus4">sus4</button>
+        <button class="soundA chord_7b5">m7b5</button>
+        <button class="soundA chord_M7b5">7b5</button>
+
+    </div>
+
+</body>
+
+</html>
